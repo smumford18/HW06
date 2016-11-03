@@ -32,7 +32,7 @@ int main() {
     cin >> name;
     
     fileName.insert(fileName.size()-4, year);
-    cout << fileName;
+    cout << fileName << endl;
     
     
     return 0;
@@ -40,28 +40,33 @@ int main() {
 
 void createFile()
 {
+    // Creates or opens a file for input and appending
     fstream file("Exercise13_1.txt", ios::in | ios::app);
     srand((unsigned int)time(NULL));
-    file << endl;
+    // Writes 100 random integers in the file
     for(int i=0; i<100; i++)
     {
         int randInt = rand() % 10;
         file << randInt << " ";
     }
+    file.close();
 }
 
 void countCharacters()
 {
     string fileName;
+    // Prompts user for a file name
     cout << "Enter a file name: ";
     getline(cin, fileName);
-    //cout << fileName << endl;
+    // Opens file for input and output
     fstream iofile(fileName, ios::in | ios::out);
     int count =0;
+    // Checks to make sure file opened
     if(!iofile)
     {
         cout << "ERROR: Could not open file" << endl;
     }
+    // Counts the characters in the file
     else
     {
         char character;
@@ -72,5 +77,6 @@ void countCharacters()
         iofile.clear();
         cout << "The file has " << count << " characters" << endl;
     }
+    // Closes the opened file
     iofile.close();
 }
