@@ -14,26 +14,13 @@ using namespace std;
 
 void createFile();
 void countCharacters();
+void babyNames();
 
 int main() {
     
     //createFile();
     //countCharacters();
-    
-    string year;
-    string gender;
-    string name;
-    string fileName = "Babynamranking.txt";
-    cout << "Enter the year: ";
-    cin >> year;
-    cout << "Enter the gender: ";
-    cin >> gender;
-    cout << "Enter the name: ";
-    cin >> name;
-    
-    fileName.insert(fileName.size()-4, year);
-    cout << fileName << endl;
-    
+    babyNames();
     
     return 0;
 }
@@ -79,4 +66,21 @@ void countCharacters()
     }
     // Closes the opened file
     iofile.close();
+}
+
+void babyNames()
+{
+    string year;
+    string gender;
+    string name;
+    string fileName = "Babynamranking.txt";
+    cout << "Enter the year: ";
+    cin >> year;
+    cout << "Enter the gender: ";
+    cin >> gender;
+    cout << "Enter the name: ";
+    cin >> name;
+    
+    fileName.insert(fileName.size()-4, year);
+    cout << fileName << endl;
 }
