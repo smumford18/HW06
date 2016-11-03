@@ -8,6 +8,7 @@
 
 #include <iostream>
 #include <fstream>
+#include <string>
 
 using namespace std;
 
@@ -16,8 +17,23 @@ void countCharacters();
 
 int main() {
     
-    createFile();
-    countCharacters();
+    //createFile();
+    //countCharacters();
+    
+    string year;
+    string gender;
+    string name;
+    string fileName = "Babynamranking.txt";
+    cout << "Enter the year: ";
+    cin >> year;
+    cout << "Enter the gender: ";
+    cin >> gender;
+    cout << "Enter the name: ";
+    cin >> name;
+    
+    fileName.insert(fileName.size()-4, year);
+    cout << fileName;
+    
     
     return 0;
 }
@@ -57,5 +73,4 @@ void countCharacters()
         cout << "The file has " << count << " characters" << endl;
     }
     iofile.close();
-
 }
