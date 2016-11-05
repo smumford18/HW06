@@ -23,7 +23,11 @@ public:
     void setRadius(double);
     static int getNumberOfObjects();
     bool operator<(Circle&);
-    
+    bool operator<=(Circle&);
+    bool operator==(Circle&);
+    bool operator!=(Circle&);
+    bool operator>(Circle&);
+    bool operator>=(Circle&);
 };
 
 #endif /* Circle_hpp */

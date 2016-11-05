@@ -43,3 +43,38 @@ bool Circle::operator<(Circle& c)
     else
         return false;
 }
+bool Circle::operator<=(Circle& c)
+{
+    if(getRadius() <= c.getRadius())
+        return true;
+    else
+        return false;
+}
+bool Circle::operator==(Circle& c)
+{
+    if(getRadius() == c.getRadius())
+        return true;
+    else
+        return false;
+}
+bool Circle::operator!=(Circle& c)
+{
+    if(getRadius() != c.getRadius())
+        return true;
+    else
+        return false;
+}
+bool Circle::operator>(Circle& c)
+{
+    if(getRadius() > c.getRadius())
+        return true;
+    else
+        return false;
+}
+bool Circle::operator>=(Circle& c)
+{
+    if(getRadius() >= c.getRadius())
+        return true;
+    else
+        return false;
+}

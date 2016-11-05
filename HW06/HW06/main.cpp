@@ -9,18 +9,23 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include "Circle.hpp"
+#include "Complex.hpp"
 
 using namespace std;
 
 void createFile();
 void countCharacters();
 void babyNames();
+void testCircleOperators();
+void testComplex();
 
 int main() {
     
     //createFile();
     //countCharacters();
-    babyNames();
+    //babyNames();
+    testCircleOperators();
     
     return 0;
 }
@@ -83,4 +88,37 @@ void babyNames()
     
     fileName.insert(fileName.size()-4, year);
     cout << fileName << endl;
+}
+
+void testCircleOperators()
+{
+    Circle c1(5);
+    Circle c2(10);
+    
+    if(c1 < c2)
+        cout << "The first circle is smaller than the second" << endl;
+    if(c1 <= c2)
+        cout << "The fist circle is smaller than or equal to the second" << endl;
+    if(c1 == c2)
+        cout << "The first circle is equal to the second" << endl;
+    if(c1 != c2)
+        cout << "The first circle is not equal to the second" << endl;
+    if(c1 > c2)
+        cout << "The first circle is greater than the second" << endl;
+    if(c1 >= c2)
+        cout << "The first circle is greater than or equal to the second" << endl;
+}
+
+void testComplex()
+{
+    int A, B;
+    int C, D;
+    cout << "Enter the first complex number: ";
+    cin >> A >> B;
+    cout << "Enter the second complex number: ";
+    cin >> C >> D;
+    Complex c1(A, B);
+    Complex c2(C, D);
+    sc1.add(c1, c2);
+    
 }
