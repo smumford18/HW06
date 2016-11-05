@@ -119,6 +119,6 @@ void testComplex()
     cin >> C >> D;
     Complex c1(A, B);
     Complex c2(C, D);
-    sc1.add(c1, c2);
+    c1.add(c1, c2);
     
 }
