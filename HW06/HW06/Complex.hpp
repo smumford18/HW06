@@ -9,6 +9,10 @@
 #ifndef Complex_hpp
 #define Complex_hpp
 
+#include <string>
+
+using namespace std;
+
 class Complex
 {
 private:
@@ -28,6 +32,26 @@ public:
     Complex multiply(Complex&, Complex&);
     Complex divide(Complex&, Complex&);
     double abs(Complex&, Complex&);
+    string toString(Complex&);
+    
+    Complex operator+=(Complex&);
+    Complex operator-=(Complex&);
+    Complex operator*=(Complex&);
+    Complex operator/=(Complex&);
+    int operator[](int);
+    Complex operator+();
+    Complex operator-();
+    Complex operator++();
+    Complex operator--();
+    Complex operator++(int);
+    Complex operator--(int);
+    friend ostream& operator<<(ostream&, const Complex&);
+    friend istream& operator>>(ostream&, const Complex&);
 };
+
+Complex operator+(Complex&, Complex&);
+Complex operator-(Complex&, Complex&);
+Complex operator*(Complex&, Complex&);
+Complex operator/(Complex&, Complex&);
 
 #endif /* Complex_hpp */

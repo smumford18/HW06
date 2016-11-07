@@ -25,7 +25,8 @@ int main() {
     //createFile();
     //countCharacters();
     //babyNames();
-    testCircleOperators();
+    //testCircleOperators();
+    testComplex();
     
     return 0;
 }
@@ -119,6 +120,7 @@ void testComplex()
     cin >> C >> D;
     Complex c1(A, B);
     Complex c2(C, D);
-    c1.add(c1, c2);
+    Complex c3 = c1.add(c1, c2);
+    //c3.toString(c3);
     
 }

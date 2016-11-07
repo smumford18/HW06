@@ -64,3 +64,15 @@ double abs(Complex& c1, Complex& c2)
     double ABS = pow(pow( c1.getA(), 2) + pow(c1.getB() , 2), 1/2);
     return ABS;
 }
+/*
+string toString(Complex& c)
+{
+    string newC = " + i";
+    string newA =
+    string newB = to_string(c.getB());
+    newC.insert(0, newA);
+    newC.insert(newC.size()-1, newB);
+    
+    return newC;
+ 
+}*/
