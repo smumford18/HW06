@@ -26,7 +26,7 @@ int main() {
     //countCharacters();
     //babyNames();
     //testCircleOperators();
-    //testComplex();
+    testComplex();
     
     return 0;
 }
@@ -145,7 +145,7 @@ void testCircleOperators()
     if(c1 >= c2)
         cout << "The first circle is greater than or equal to the second" << endl;
 }
-/*
+
 void testComplex()
 {
     int A, B;
@@ -156,8 +156,7 @@ void testComplex()
     cin >> C >> D;
     Complex c1(A, B);
     Complex c2(C, D);
-    Complex c3 = c1 + c2;
-    string result = c3.toString();
-    cout << result << endl;
+    Complex c3 = c1.add(c2);
+    cout << c3.toString() << endl;
     
-}*/
+}

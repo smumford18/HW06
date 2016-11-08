@@ -24,8 +24,10 @@ public:
     Complex(double);
     Complex(double, double);
     
-    double getA();
-    double getB();
+    double getA() const;
+    double getB() const;
+    void setA(double);
+    void setB(double);
     
     Complex add(Complex&);
     Complex subtract(Complex&);

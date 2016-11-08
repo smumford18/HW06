@@ -8,6 +8,7 @@
 
 #include "Complex.hpp"
 #include <cmath>
+#include <iostream>
 
 Complex::Complex()
 {
@@ -23,13 +24,21 @@ Complex::Complex(double A, double B)
     a = A;
     b = B;
 }
-double Complex::getA()
+double Complex::getA() const
 {
     return a;
 }
-double Complex::getB()
+double Complex::getB() const
 {
     return b;
+}
+void Complex::setA(double newA)
+{
+    a = newA;
+}
+void Complex::setB(double newB)
+{
+    b = newB;
 }
 Complex Complex::add(Complex& c)
 {
@@ -103,7 +112,6 @@ int Complex::operator[](int index)
     else
         return -1;
 }
-/*
 Complex Complex::operator+()
 {
     double newA = -getA();
@@ -121,27 +129,40 @@ Complex& Complex::operator++()
     int newB = getB() + 1;
     Complex c(newA, newB);
     return c;
-}*/
-/*
+}
 Complex& Complex::operator--()
 {
-    
+    double newA = getA()-1;
+    double newB = getB()-1;
+    Complex newC(newA,newB);
+    return newC;
 }
 Complex Complex::operator++(int temp)
 {
-    
+    double newA = getA()+1;
+    double newB = getB()+1;
+    Complex newC(newA,newB);
+    return newC;
 }
 Complex Complex::operator--(int temp)
 {
-    
+    double newA = getA()-1;
+    double newB = getB()-1;
+    Complex newC(newA,newB);
+    return newC;
 }
 ostream& operator<<(ostream& out, const Complex& c)
 {
-    string newA = to_string(c.getA());
-    
+    out << c.getA() << " + " << c.getB() << "i";
+    return out;
 }
-istream& operator>>(ostream& in, const Complex& c);
+istream& operator>>(istream& in, Complex& c)
 {
-    
+    double newA, newB;
+    in >> newA;
+    in >> newB;
+    c.setA(newA);
+    c.setB(newB);
+    return in;
 }
-*/
+
