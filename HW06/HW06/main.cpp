@@ -24,7 +24,7 @@ int main() {
     
     //createFile();
     //countCharacters();
-    babyNames();
+    //babyNames();
     //testCircleOperators();
     //testComplex();
     
@@ -80,9 +80,9 @@ void babyNames()
     string gender;
     string name;
     string fileName = "Babynameranking.txt";
-    cout << "Enter the year: ";
+    cout << "Enter the year (2010-2014): ";
     cin >> year;
-    cout << "Enter the gender: ";
+    cout << "Enter the gender (M/F): ";
     cin >> gender;
     cout << "Enter the name: ";
     cin >> name;
@@ -90,20 +90,36 @@ void babyNames()
     fileName.insert(fileName.size()-4, year);
     cout << fileName << endl;
     
-    fstream fileIO(fileName, ios::out);
-    if(fileIO.fail())
+    ifstream fileIO(fileName);
+    if(!fileIO)
     {
         cout << "ERROR: Could not open file" << endl;
     }
     else
     {
-        cout << "File opened" << endl;
         string searchName;
-        while(fileIO >> searchName)
+        string count = "";
+        while(!fileIO.eof())
         {
-            if(searchName == name)
+            int rank;
+            string bname;
+            string bnum;
+            string gname;
+            string gnum;
+            fileIO >> rank >> bname >> bnum >> gname >> gnum;
+            if(gender == "M")
             {
-                cout << "Found Name";
+                if(name == bname)
+                {
+                    cout << bname << " is ranked #" << rank << " in year " << year << endl;
+                }
+            }
+            if(gender == "F")
+            {
+                if(name == gname)
+                {
+                    cout << gname << " is ranked #" << rank << " in year " << year << endl;
+                }
             }
         }
     }
@@ -129,7 +145,7 @@ void testCircleOperators()
     if(c1 >= c2)
         cout << "The first circle is greater than or equal to the second" << endl;
 }
-
+/*
 void testComplex()
 {
     int A, B;
@@ -140,7 +156,8 @@ void testComplex()
     cin >> C >> D;
     Complex c1(A, B);
     Complex c2(C, D);
-    //Complex c3 = c1.add(c1, c2);
-    //c3.toString(c3);
+    Complex c3 = c1 + c2;
+    string result = c3.toString();
+    cout << result << endl;
     
-}
+}*/

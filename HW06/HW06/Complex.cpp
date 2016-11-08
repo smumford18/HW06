@@ -64,11 +64,11 @@ double Complex::abs()
     double ABS = pow(pow( getA(), 2) + pow(getB() , 2), 1/2);
     return ABS;
 }
-string toString(Complex& c)
+string Complex::toString()
 {
     string newC = " + i";
-    string newA = to_string(c.getA());
-    string newB = to_string(c.getB());
+    string newA = to_string(getA());
+    string newB = to_string(getB());
     newC.insert(0, newA);
     newC.insert(newC.size()-1, newB);
     
@@ -103,9 +103,13 @@ int Complex::operator[](int index)
     else
         return -1;
 }
+/*
 Complex Complex::operator+()
 {
-    return *this;
+    double newA = -getA();
+    double newB = -getB();
+    Complex newC(newA, newB);
+    return newC;
 }
 Complex Complex::operator-()
 {
@@ -117,7 +121,7 @@ Complex& Complex::operator++()
     int newB = getB() + 1;
     Complex c(newA, newB);
     return c;
-}
+}*/
 /*
 Complex& Complex::operator--()
 {
