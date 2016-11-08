@@ -24,9 +24,9 @@ int main() {
     
     //createFile();
     //countCharacters();
-    //babyNames();
+    babyNames();
     //testCircleOperators();
-    testComplex();
+    //testComplex();
     
     return 0;
 }
@@ -79,7 +79,7 @@ void babyNames()
     string year;
     string gender;
     string name;
-    string fileName = "Babynamranking.txt";
+    string fileName = "Babynameranking.txt";
     cout << "Enter the year: ";
     cin >> year;
     cout << "Enter the gender: ";
@@ -89,6 +89,26 @@ void babyNames()
     
     fileName.insert(fileName.size()-4, year);
     cout << fileName << endl;
+    
+    fstream fileIO(fileName, ios::out);
+    if(fileIO.fail())
+    {
+        cout << "ERROR: Could not open file" << endl;
+    }
+    else
+    {
+        cout << "File opened" << endl;
+        string searchName;
+        while(fileIO >> searchName)
+        {
+            if(searchName == name)
+            {
+                cout << "Found Name";
+            }
+        }
+    }
+    
+    fileIO.close();
 }
 
 void testCircleOperators()
@@ -120,7 +140,7 @@ void testComplex()
     cin >> C >> D;
     Complex c1(A, B);
     Complex c2(C, D);
-    Complex c3 = c1.add(c1, c2);
+    //Complex c3 = c1.add(c1, c2);
     //c3.toString(c3);
     
 }

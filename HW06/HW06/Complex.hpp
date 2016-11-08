@@ -27,22 +27,22 @@ public:
     double getA();
     double getB();
     
-    Complex add(Complex&, Complex&);
-    Complex subtract(Complex&, Complex&);
-    Complex multiply(Complex&, Complex&);
-    Complex divide(Complex&, Complex&);
-    double abs(Complex&, Complex&);
-    string toString(Complex&);
+    Complex add(Complex&);
+    Complex subtract(Complex&);
+    Complex multiply(Complex&);
+    Complex divide(Complex&);
+    double abs();
+    string toString();
     
-    Complex operator+=(Complex&);
-    Complex operator-=(Complex&);
-    Complex operator*=(Complex&);
-    Complex operator/=(Complex&);
+    Complex& operator+=(Complex&);
+    Complex& operator-=(Complex&);
+    Complex& operator*=(Complex&);
+    Complex& operator/=(Complex&);
     int operator[](int);
     Complex operator+();
     Complex operator-();
-    Complex operator++();
-    Complex operator--();
+    Complex& operator++();
+    Complex& operator--();
     Complex operator++(int);
     Complex operator--(int);
     friend ostream& operator<<(ostream&, const Complex&);
