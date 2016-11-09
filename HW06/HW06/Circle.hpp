@@ -16,12 +16,19 @@ private:
     static int numberOfObjects;
     
 public:
+    // Constructors
     Circle();
     Circle(double);
+    
+    // Getters
     double getArea() const;
     double getRadius() const;
-    void setRadius(double);
     static int getNumberOfObjects();
+    
+    // Setters
+    void setRadius(double);
+    
+    // Overloaded operators
     bool operator<(Circle&);
     bool operator<=(Circle&);
     bool operator==(Circle&);

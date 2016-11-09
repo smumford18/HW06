@@ -20,22 +20,30 @@ private:
     double b;
     
 public:
+    // Constructors
     Complex();
     Complex(double);
     Complex(double, double);
     
+    // Getters
     double getA() const;
     double getB() const;
+    
+    // Setters
     void setA(double);
     void setB(double);
     
+    // Operation functions
     Complex add(Complex&);
     Complex subtract(Complex&);
     Complex multiply(Complex&);
     Complex divide(Complex&);
     double abs();
+    
+    // Puts numbers in string in easy to output form
     string toString();
     
+    // Overloaded operators
     Complex& operator+=(Complex&);
     Complex& operator-=(Complex&);
     Complex& operator*=(Complex&);

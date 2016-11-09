@@ -49,7 +49,7 @@ Complex Complex::add(Complex& c)
 }
 Complex Complex::subtract(Complex& c)
 {
-    double newA = getA() - c.getB();
+    double newA = getA() - c.getA();
     double newB = getB() - c.getB();
     Complex cSub(newA, newB);
     return cSub;
@@ -58,19 +58,19 @@ Complex Complex::multiply(Complex& c)
 {
     double newA = (getA() * c.getA()) - (getB() * c.getB());
     double newB = (getB() * c.getA()) + (getA() * c.getB());
-    Complex cSub(newA, newB);
-    return cSub;
+    Complex cMult(newA, newB);
+    return cMult;
 }
 Complex Complex::divide(Complex& c)
 {
     double newA = ((getA() * c.getA()) + (getB() * c.getB())) / ((c.getA() * c.getA()) + (c.getB() * c.getB()));
-    double newB = (getB() * c.getA()) - (getA() * c.getB()) / ((c.getA() * c.getA()) + (c.getB() * c.getB()));
+    double newB = ((b * c.getA()) - (a * c.getB())) / ((pow(c.getA(), 2)) + (pow(c.getB(), 2)));
     Complex cDiv(newA, newB);
     return cDiv;
 }
 double Complex::abs()
 {
-    double ABS = pow(pow( getA(), 2) + pow(getB() , 2), 1/2);
+    double ABS = pow(pow(a , 2) + pow(b , 2), 0.5);
     return ABS;
 }
 string Complex::toString()
@@ -165,4 +165,19 @@ istream& operator>>(istream& in, Complex& c)
     c.setB(newB);
     return in;
 }
-
+Complex operator+(Complex& c1, Complex& c2)
+{
+    return c1.add(c2);
+}
+Complex operator-(Complex& c1, Complex& c2)
+{
+    return c1.subtract(c2);
+}
+Complex operator*(Complex& c1, Complex& c2)
+{
+    return c1.multiply(c2);
+}
+Complex operator/(Complex& c1, Complex& c2)
+{
+    return c1.divide(c2);
+}
